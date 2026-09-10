@@ -1,0 +1,1529 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=5.0"
+    />
+    <title>JGN.Travel - Explore The World With Us</title>
+    <meta
+      name="description"
+      content="Book unforgettable travel packages, explore top destinations worldwide, and enjoy exclusive tour offers with MR.Travel."
+    />
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+    <!-- Main & Media Stylesheets -->
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="media.css" />
+  </head>
+
+  <body class="dark_mode">
+    <!-- Header & Navigation -->
+    <header>
+      <nav id="navbar">
+        <a href="#" class="logo" id="brandLogo">
+          <i class="bi bi-compass-fill"></i>
+          <h4>
+            <span class="logo_bracket">&lt;</span
+            ><span id="typedLogo" class="typed_logo">JGN.Travel</span
+            ><span class="logo_cursor">|</span
+            ><span class="logo_bracket">&gt;</span>
+          </h4>
+        </a>
+
+        <ul id="menu_bx">
+          <li><a href="#discover" class="nav-link">Home</a></li>
+          <li><a href="#discover" class="nav-link">Discover</a></li>
+          <li><a href="#offers" class="nav-link">Special Deals</a></li>
+          <li><a href="#destinations" class="nav-link">Destinations</a></li>
+          <li><a href="#community" class="nav-link">Community</a></li>
+          <li><a href="#about" class="nav-link">About Us</a></li>
+        </ul>
+
+        <!-- Top Navbar Actions: Register / Book & Mode Toggle -->
+        <div class="nav_actions">
+          <button class="nav-btn-register" id="navRegisterBtn">
+            Register / Book
+          </button>
+          <button
+            class="theme_toggle_btn"
+            id="themeToggleBtn"
+            aria-label="Toggle Dark / Light Mode"
+            title="Switch to Light Mode"
+          >
+            <i class="bi bi-sun-fill" id="themeIcon" style="color: #feca57"></i>
+          </button>
+        </div>
+      </nav>
+
+      <!-- Hero Content Section -->
+      <div class="content" id="discover">
+        <!-- Dynamic Auto-Changing Hero Background Slideshow -->
+        <div class="hero_bg_slider" id="heroBgSlider">
+          <div
+            class="hero_bg_slide active"
+            style="background-image: url(&quot;background1.png&quot;)"
+          ></div>
+          <div
+            class="hero_bg_slide"
+            style="background-image: url(&quot;mountain.jpg&quot;)"
+          ></div>
+          <div
+            class="hero_bg_slide"
+            style="background-image: url(&quot;lotus.jpg&quot;)"
+          ></div>
+          <div
+            class="hero_bg_slide"
+            style="background-image: url(&quot;long.jpg&quot;)"
+          ></div>
+          <div
+            class="hero_bg_slide"
+            style="background-image: url(&quot;newyork.jpeg&quot;)"
+          ></div>
+          <div
+            class="hero_bg_slide"
+            style="background-image: url(&quot;sanb.jpeg&quot;)"
+          ></div>
+        </div>
+
+        <div class="cont_bx">
+          <span class="hero_badge"
+            ><i class="bi bi-stars"></i> &lt;Experience Pure Wonder&gt;</span
+          >
+          <h1 class="hero_title">
+            <span class="typing_bracket">&lt;</span
+            ><span id="typedText" class="typed_text"
+              >The Right Destination for you and your Family</span
+            ><span class="typing_cursor">|</span
+            ><span class="typing_bracket">&gt;</span>
+          </h1>
+          <p>
+            Curated holiday packages, luxury stays, and seamless transfers
+            designed to give you memories for a lifetime.
+          </p>
+          <div class="hero_btns">
+            <button class="btn_search" id="heroSearchBtn">
+              Start Your Search <i class="bi bi-arrow-right-short"></i>
+            </button>
+            <button class="btn_explore_outline" id="heroExploreBtn">
+              View Offers
+            </button>
+          </div>
+        </div>
+
+        <!-- Trip Search & Filter Box -->
+        <div class="trip_bx">
+          <form class="search_bx" id="searchForm" onsubmit="return false;">
+            <div class="card search_card" id="cardLocation">
+              <h4>
+                <i class="bi bi-geo-alt-fill"></i> Location
+                <i class="bi bi-caret-down-fill"></i>
+              </h4>
+              <input
+                type="text"
+                id="destInput"
+                list="destinationsList"
+                placeholder="Where to go?"
+                autocomplete="off"
+              />
+              <datalist id="destinationsList">
+                <option value="Mumbai, India"></option>
+                <option value="New York, USA"></option>
+                <option value="St. Petersburg, Russia"></option>
+                <option value="Barcelona, Spain"></option>
+                <option value="Dubai, UAE"></option>
+                <option value="Cairo, Egypt"></option>
+                <option value="Da Nang, Vietnam"></option>
+                <option value="Rio de Janeiro, Brazil"></option>
+              </datalist>
+            </div>
+
+            <div class="card search_card" id="cardDate">
+              <h4>
+                <i class="bi bi-calendar-event-fill"></i> Date
+                <i class="bi bi-caret-down-fill"></i>
+              </h4>
+              <input type="date" id="dateInput" />
+            </div>
+
+            <div class="card search_card" id="cardPeople">
+              <h4>
+                <i class="bi bi-people-fill"></i> Travelers
+                <i class="bi bi-caret-down-fill"></i>
+              </h4>
+              <input
+                type="number"
+                id="peopleInput"
+                min="1"
+                max="20"
+                placeholder="How many?"
+              />
+            </div>
+
+            <button type="button" class="btn_explore" id="exploreBtn">
+              <i class="bi bi-search"></i> <span>Explore Now</span>
+            </button>
+          </form>
+
+          <!-- Featured Countries Cards -->
+          <div class="travel_bx" id="countriesSection">
+            <div class="travel_header">
+              <h4>Top Countries to Travel</h4>
+              <span class="swipe_hint"
+                ><i class="bi bi-arrow-left-right"></i> Scroll for more</span
+              >
+            </div>
+
+            <div class="cards" id="countryCardsContainer">
+              <!-- Country 1: India -->
+              <div
+                class="card country_card"
+                data-country="India"
+                data-city="Mumbai Central"
+                data-price="₹460"
+                data-img="mumbaiN.jpeg"
+                data-flag="india.png"
+              >
+                <h3>INDIA <img src="india.png" alt="India Flag" /></h3>
+                <div class="img_wrapper">
+                  <img src="mumbaiN.jpeg" alt="Mumbai Central" loading="lazy" />
+                  <span class="country_tag tag_popular"
+                    ><i class="bi bi-fire"></i> Popular</span
+                  >
+                </div>
+                <div class="btn_city">
+                  <button type="button" class="read_now_btn">Read Now</button>
+                  <h5>Mumbai Central<br /><span>₹460</span></h5>
+                </div>
+              </div>
+
+              <!-- Country 2: United States -->
+              <div
+                class="card country_card"
+                data-country="United States"
+                data-city="New York"
+                data-price="₹870"
+                data-img="newyork.jpeg"
+                data-flag="united.png"
+              >
+                <h3>UNITED STATES <img src="united.png" alt="US Flag" /></h3>
+                <div class="img_wrapper">
+                  <img src="newyork.jpeg" alt="New York City" loading="lazy" />
+                  <span class="country_tag tag_trending"
+                    ><i class="bi bi-graph-up-arrow"></i> Trending</span
+                  >
+                </div>
+                <div class="btn_city">
+                  <button type="button" class="read_now_btn">Read Now</button>
+                  <h5>New York<br /><span>₹870</span></h5>
+                </div>
+              </div>
+
+              <!-- Country 3: Russia -->
+              <div
+                class="card country_card"
+                data-country="Russia"
+                data-city="St. Petersburg"
+                data-price="₹660"
+                data-img="sanb.jpeg"
+                data-flag="russia.png"
+              >
+                <h3>RUSSIA <img src="russia.png" alt="Russia Flag" /></h3>
+                <div class="img_wrapper">
+                  <img src="sanb.jpeg" alt="St. Petersburg" loading="lazy" />
+                  <span class="country_tag tag_featured"
+                    ><i class="bi bi-stars"></i> Featured</span
+                  >
+                </div>
+                <div class="btn_city">
+                  <button type="button" class="read_now_btn">Read Now</button>
+                  <h5>St. Petersburg<br /><span>₹660</span></h5>
+                </div>
+              </div>
+
+              <!-- Country 4: Spain -->
+              <div
+                class="card country_card"
+                data-country="Spain"
+                data-city="Barcelona"
+                data-price="₹730"
+                data-img="barce.jpeg"
+                data-flag="spain.png"
+              >
+                <h3>SPAIN <img src="spain.png" alt="Spain Flag" /></h3>
+                <div class="img_wrapper">
+                  <img src="barce.jpeg" alt="Barcelona" loading="lazy" />
+                  <span class="country_tag tag_hotdeal"
+                    ><i class="bi bi-lightning-charge-fill"></i> Hot Deal</span
+                  >
+                </div>
+                <div class="btn_city">
+                  <button type="button" class="read_now_btn">Read Now</button>
+                  <h5>Barcelona<br /><span>₹730</span></h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Best Tour Package Offers -->
+    <section class="offers" id="offers">
+      <div class="section_title">
+        <span class="sub_badge">Featured Packages</span>
+        <h1>Best Tour Package Offers For You</h1>
+        <p>Hand-picked holiday escapes with premium amenities included</p>
+      </div>
+
+      <!-- Filter Tags -->
+      <div class="offer_filters">
+        <button class="filter_btn active" data-filter="all">
+          All Packages
+        </button>
+        <button class="filter_btn" data-filter="asia">Asia</button>
+        <button class="filter_btn" data-filter="middle-east">
+          Middle East
+        </button>
+        <button class="filter_btn" data-filter="africa">Africa</button>
+      </div>
+
+      <div class="cards" id="packageCardsGrid">
+        <!-- Package 1: Lotus Temple -->
+        <div
+          class="card package_card"
+          data-category="asia"
+          data-title="Lotus Temple - Delhi"
+          data-price="₹5000"
+          data-days="4 Days"
+          data-country="India"
+          data-img="lotus.jpg"
+          data-likes="11998"
+          data-chats="9999"
+        >
+          <h3>Lotus - Delhi</h3>
+          <div class="img_text">
+            <img src="lotus.jpg" alt="Lotus Temple Delhi" loading="lazy" />
+            <h4>
+              Included: Air ticket, Hotel, Breakfast, Tour, Airport-Transfer
+            </h4>
+          </div>
+          <div class="cont_bx">
+            <div class="price">
+              <div class="heart_chat">
+                <button class="icon_btn like_btn" aria-label="Like Package">
+                  <i class="bi bi-heart-fill"></i
+                  ><span class="like_count">11998</span>
+                </button>
+                <button class="icon_btn chat_btn" aria-label="Chat or Inquire">
+                  <i class="bi bi-chat-fill"></i><span>9999</span>
+                </button>
+              </div>
+              <div class="info_price">
+                <button class="more_info_btn">More Info</button>
+                <h4>₹5000</h4>
+              </div>
+            </div>
+            <div class="days" title="Click for details">4 Days<br />India</div>
+          </div>
+        </div>
+
+        <!-- Package 2: Burj Khalifa -->
+        <div
+          class="card package_card"
+          data-category="middle-east"
+          data-title="Burj Khalifa - DXB"
+          data-price="₹4500"
+          data-days="6 Days"
+          data-country="Dubai"
+          data-img="long.jpg"
+          data-likes="1198"
+          data-chats="9999"
+        >
+          <h3>Burj Khalifa - DXB</h3>
+          <div class="img_text">
+            <img src="long.jpg" alt="Burj Khalifa Dubai" loading="lazy" />
+            <h4>
+              Included: Air ticket, Hotel, Breakfast, Tour, Airport-Transfer
+            </h4>
+          </div>
+          <div class="cont_bx">
+            <div class="price">
+              <div class="heart_chat">
+                <button class="icon_btn like_btn" aria-label="Like Package">
+                  <i class="bi bi-heart-fill"></i
+                  ><span class="like_count">1198</span>
+                </button>
+                <button class="icon_btn chat_btn" aria-label="Chat or Inquire">
+                  <i class="bi bi-chat-fill"></i><span>9999</span>
+                </button>
+              </div>
+              <div class="info_price">
+                <button class="more_info_btn">More Info</button>
+                <h4>₹4500</h4>
+              </div>
+            </div>
+            <div class="days" title="Click for details">6 Days<br />Dubai</div>
+          </div>
+        </div>
+
+        <!-- Package 3: Pyramids Egypt -->
+        <div
+          class="card package_card"
+          data-category="africa"
+          data-title="Pyramids of Giza"
+          data-price="₹4000"
+          data-days="7 Days"
+          data-country="Egypt"
+          data-img="piramids.jpeg"
+          data-likes="8745"
+          data-chats="9645"
+        >
+          <h3>Pyramids - Egypt</h3>
+          <div class="img_text">
+            <img src="piramids.jpeg" alt="Pyramids of Egypt" loading="lazy" />
+            <h4>
+              Included: Air ticket, Hotel, Breakfast, Tour, Airport-Transfer
+            </h4>
+          </div>
+          <div class="cont_bx">
+            <div class="price">
+              <div class="heart_chat">
+                <button class="icon_btn like_btn" aria-label="Like Package">
+                  <i class="bi bi-heart-fill"></i
+                  ><span class="like_count">8745</span>
+                </button>
+                <button class="icon_btn chat_btn" aria-label="Chat or Inquire">
+                  <i class="bi bi-chat-fill"></i><span>9645</span>
+                </button>
+              </div>
+              <div class="info_price">
+                <button class="more_info_btn">More Info</button>
+                <h4>₹4000</h4>
+              </div>
+            </div>
+            <div class="days" title="Click for details">7 Days<br />Egypt</div>
+          </div>
+        </div>
+
+        <!-- Package 4: Mountain Vietnam -->
+        <div
+          class="card package_card"
+          data-category="asia"
+          data-title="Marble Mountain"
+          data-price="₹5000"
+          data-days="5 Days"
+          data-country="Vietnam"
+          data-img="mountain.jpg"
+          data-likes="1254"
+          data-chats="9021"
+        >
+          <h3>Mountain - Vietnam</h3>
+          <div class="img_text">
+            <img
+              src="mountain.jpg"
+              alt="Marble Mountain Vietnam"
+              loading="lazy"
+            />
+            <h4>
+              Included: Air ticket, Hotel, Breakfast, Tour, Airport-Transfer
+            </h4>
+          </div>
+          <div class="cont_bx">
+            <div class="price">
+              <div class="heart_chat">
+                <button class="icon_btn like_btn" aria-label="Like Package">
+                  <i class="bi bi-heart-fill"></i
+                  ><span class="like_count">1254</span>
+                </button>
+                <button class="icon_btn chat_btn" aria-label="Chat or Inquire">
+                  <i class="bi bi-chat-fill"></i><span>9021</span>
+                </button>
+              </div>
+              <div class="info_price">
+                <button class="more_info_btn">More Info</button>
+                <h4>₹5000</h4>
+              </div>
+            </div>
+            <div class="days" title="Click for details">
+              5 Days<br />Vietnam
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Destination Showcase Section -->
+    <section class="destination" id="destinations">
+      <div class="des_bx">
+        <span class="sub_badge">World Destinations</span>
+        <h4>Our Destination</h4>
+        <p>
+          Choose Your Next Destination to experience world-class hospitality and
+          exotic sights.
+        </p>
+        <ul class="dest_list" id="destList">
+          <li class="dest_item active" data-dest="india">
+            <img src="india.png" alt="India Flag" class="dest_mini_flag" />
+            <span>India</span>
+            <span class="badge tag_popular"
+              ><i class="bi bi-fire"></i> Popular</span
+            >
+          </li>
+          <li class="dest_item" data-dest="russia">
+            <img src="russia.png" alt="Russia Flag" class="dest_mini_flag" />
+            <span>Russia</span>
+          </li>
+          <li class="dest_item" data-dest="dubai">
+            <img src="uae.svg" alt="UAE Flag" class="dest_mini_flag" />
+            <span>Dubai (UAE)</span>
+            <span class="badge tag_hotdeal"
+              ><i class="bi bi-lightning-fill"></i> Hot</span
+            >
+          </li>
+          <li class="dest_item" data-dest="usa">
+            <img src="united.png" alt="USA Flag" class="dest_mini_flag" />
+            <span>USA</span>
+          </li>
+          <li class="dest_item" data-dest="brazil">
+            <img src="brazil.svg" alt="Brazil Flag" class="dest_mini_flag" />
+            <span>Brazil</span>
+          </li>
+          <li class="dest_item" data-dest="vietnam">
+            <img src="vietnam.svg" alt="Vietnam Flag" class="dest_mini_flag" />
+            <span>Vietnam</span>
+          </li>
+          <li class="dest_item" data-dest="spain">
+            <img src="spain.png" alt="Spain Flag" class="dest_mini_flag" />
+            <span>Spain</span>
+            <span class="badge tag_featured"
+              ><i class="bi bi-stars"></i> Top</span
+            >
+          </li>
+        </ul>
+
+        <!-- Selected Country Flag & Info Display Box -->
+        <div class="active_country_flag_box" id="activeCountryFlagBox">
+          <div class="active_flag_card">
+            <div class="flag_img_wrapper">
+              <img
+                src="india.png"
+                alt="Country Flag"
+                id="activeCountryFlagImg"
+                class="active_flag_img"
+              />
+              <span class="flag_live_indicator"
+                ><span class="pulse_dot"></span> Active Flag</span
+              >
+            </div>
+            <div class="active_flag_details">
+              <div class="flag_title_row">
+                <h5 id="activeCountryName">INDIA</h5>
+                <span class="country_iso_badge" id="activeCountryCode">IN</span>
+              </div>
+              <p id="activeCountryDesc">
+                Rich cultural heritage, iconic palaces & royal journeys
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <h6>
+          <i class="bi bi-patch-check-fill"></i> Included: Air ticket, Hotel,
+          Breakfast, Tour, Airport-Transfer
+        </h6>
+        <button class="btn_dest_more" id="destMoreInfoBtn">
+          MORE INFO <i class="bi bi-arrow-right"></i>
+        </button>
+      </div>
+
+      <div class="img_bx" id="destShowcaseBox">
+        <img
+          src="air3.png"
+          alt="Flight and Destination Preview"
+          id="destMainImg"
+          loading="lazy"
+        />
+
+        <!-- Floating Badge 1: Dynamic Selected Country Flag -->
+        <div class="msg floating_card flag_floating_card" id="floatCard1">
+          <div class="float_flag_wrap">
+            <img
+              src="india.png"
+              alt="Country Flag"
+              id="floatImg1"
+              class="floating_flag_img"
+            />
+          </div>
+          <div class="cont">
+            <span class="float_sub_badge" id="floatFlagTag">National Flag</span>
+            <h4 id="floatTitle1">INDIA</h4>
+            <div class="icon">
+              <button class="icon_btn like_btn" aria-label="Like Country">
+                <i class="bi bi-heart-fill"></i
+                ><span class="like_count" id="floatLikes1">12554</span>
+              </button>
+              <button class="icon_btn chat_btn" aria-label="Inquire">
+                <i class="bi bi-chat-fill"></i
+                ><span id="floatChats1">9021</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Floating Badge 2: Dynamic Selected Country Landmark -->
+        <div class="msg floating_card landmark_floating_card" id="floatCard2">
+          <div class="float_landmark_wrap">
+            <img
+              src="mumbaiN.jpeg"
+              alt="Landmark"
+              id="floatImg2"
+              class="floating_landmark_img"
+            />
+          </div>
+          <div class="cont">
+            <span class="float_sub_badge" id="floatLandmarkTag"
+              >Top Attraction</span
+            >
+            <h4 id="floatTitle2">MUMBAI CENTRAL</h4>
+            <span class="dest_price_pill" id="floatPriceTag">From ₹460</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Community & Highlights Section -->
+    <section class="community_section" id="community">
+      <div class="community_container">
+        <div class="community_content">
+          <span class="sub_badge">Global Community</span>
+          <h2>Join 50,000+ Happy Travelers Worldwide</h2>
+          <p>
+            Share travel stories, gain insider destination recommendations, and
+            unlock private discounts available only to our members.
+          </p>
+          <div class="community_actions">
+            <button class="btn_community" id="joinCommunityBtn">
+              Join Community
+            </button>
+            <button class="btn_community_outline" id="readStoriesBtn">
+              Read Travel Stories
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer id="about">
+      <div class="footer_top">
+        <h2>Subscribe & <br />Get Special Discount</h2>
+        <p>
+          Sign up for our newsletter and receive up to 25% off on your next
+          international holiday.
+        </p>
+        <form class="input" id="newsletterForm" onsubmit="return false;">
+          <input
+            type="email"
+            id="newsletterEmail"
+            placeholder="Enter Your Email Address"
+            required
+          />
+          <button type="button" id="newsletterBtn">Subscribe</button>
+        </form>
+      </div>
+
+      <!-- Metric Statistics (Clickable Quick Sections) -->
+      <ul class="stats_list">
+        <li
+          class="stat_card"
+          data-target="#discover"
+          role="button"
+          tabindex="0"
+          title="Click to Discover Services"
+        >
+          <div class="stat_icon">
+            <i class="bi bi-airplane-engines-fill"></i>
+          </div>
+          <span class="stat_num">9812+</span>
+          <h6>Years Servicing the <br />Travel Industry</h6>
+          <span class="stat_cta"
+            >Explore <i class="bi bi-arrow-right-short"></i
+          ></span>
+        </li>
+        <li
+          class="stat_card"
+          data-target="#destinations"
+          role="button"
+          tabindex="0"
+          title="Click to View Global Destinations"
+        >
+          <div class="stat_icon"><i class="bi bi-globe-americas"></i></div>
+          <span class="stat_num">7823+</span>
+          <h6>Global <br />Partnerships</h6>
+          <span class="stat_cta"
+            >Country Guides <i class="bi bi-arrow-right-short"></i
+          ></span>
+        </li>
+        <li
+          class="stat_card"
+          data-target="#offers"
+          role="button"
+          tabindex="0"
+          title="Click to View Tour Package Deals"
+        >
+          <div class="stat_icon"><i class="bi bi-trophy-fill"></i></div>
+          <span class="stat_num">5421+</span>
+          <h6>Industry Awards <br />Since 2020</h6>
+          <span class="stat_cta"
+            >View Deals <i class="bi bi-arrow-right-short"></i
+          ></span>
+        </li>
+        <li
+          class="stat_card"
+          data-target="#community"
+          role="button"
+          tabindex="0"
+          title="Click to Join Traveler Community"
+        >
+          <div class="stat_icon"><i class="bi bi-people-fill"></i></div>
+          <span class="stat_num">6426+</span>
+          <h6>Subscribers & <br />Community</h6>
+          <span class="stat_cta"
+            >Join Club <i class="bi bi-arrow-right-short"></i
+          ></span>
+        </li>
+      </ul>
+
+      <!-- Footer Quick Navigation Links -->
+      <div class="footer_nav">
+        <div class="footer_col">
+          <h5>
+            <span class="footer_logo_bracket">&lt;</span>JGN.Travel<span
+              class="footer_logo_bracket"
+              >&gt;</span
+            >
+          </h5>
+          <p>
+            Your trustworthy companion for hassle-free worldwide flight
+            bookings, hotel reservations, and custom holidays.
+          </p>
+          <div class="social_links">
+            <a
+              href="https://www.facebook.com/share/1EGZiKMhka/"
+              class="social_icon"
+              aria-label="Facebook"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Facebook"
+              ><i class="bi bi-facebook"></i
+            ></a>
+            <a
+              href="https://www.instagram.com/software_engineer5177?igsi=a2k0ajJvNTlpYTEz"
+              class="social_icon"
+              aria-label="Instagram"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Instagram"
+              ><i class="bi bi-instagram"></i
+            ></a>
+            <a
+              href="https://x.com/JaganKumar33193"
+              class="social_icon"
+              aria-label="Twitter"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="X (Twitter)"
+              ><i class="bi bi-twitter-x"></i
+            ></a>
+            <a
+              href="https://www.linkedin.com/in/jagan-kumar-ba15192a7"
+              class="social_icon"
+              aria-label="LinkedIn"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="LinkedIn"
+              ><i class="bi bi-linkedin"></i
+            ></a>
+          </div>
+        </div>
+        <div class="footer_col">
+          <h5>Quick Links</h5>
+          <ul>
+            <li><a href="#discover">Discover Destinations</a></li>
+            <li><a href="#offers">Tour Package Deals</a></li>
+            <li><a href="#destinations">Country Guides</a></li>
+            <li><a href="#community">Traveler Stories</a></li>
+          </ul>
+        </div>
+        <div class="footer_col">
+          <h5>Support & Legal</h5>
+          <ul>
+            <li>
+              <a
+                href="javascript:void(0)"
+                class="footer_link_btn"
+                data-tab="faq"
+                ><i class="bi bi-question-circle"></i> Help & FAQs</a
+              >
+            </li>
+            <li>
+              <a
+                href="javascript:void(0)"
+                class="footer_link_btn"
+                data-tab="cancellation"
+                ><i class="bi bi-arrow-counterclockwise"></i> Cancellation
+                Policy</a
+              >
+            </li>
+            <li>
+              <a
+                href="javascript:void(0)"
+                class="footer_link_btn"
+                data-tab="privacy"
+                ><i class="bi bi-shield-lock"></i> Privacy Policy</a
+              >
+            </li>
+            <li>
+              <a
+                href="javascript:void(0)"
+                class="footer_link_btn"
+                data-tab="terms"
+                ><i class="bi bi-file-earmark-text"></i> Terms & Conditions</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="footer_col">
+          <h5>Contact Us</h5>
+          <p>
+            <a href="tel:+919120852605" class="contact_link"
+              ><i class="bi bi-telephone-fill"></i> +91-9120852605</a
+            >
+          </p>
+          <p>
+            <a href="mailto:jagankumar9534@gmail.com" class="contact_link"
+              ><i class="bi bi-envelope-fill"></i> jagankumar9534@gmail.com</a
+            >
+          </p>
+          <p>
+            <i class="bi bi-geo-alt-fill"></i> 742 Evergreen Terrace, Suite 100
+          </p>
+        </div>
+      </div>
+
+      <div class="footer_bottom">
+        <div class="footer_marquee_wrap">
+          <div class="footer_marquee_content">
+            <span class="marquee_title"
+              >© 2026 JGN.Travel Agency || MERN DEVELOPER By JAGAN</span
+            >
+            <span class="marquee_divider">✦</span>
+            <span class="marquee_title"
+              >© 2026 JGN.Travel Agency || MERN DEVELOPER By JAGAN</span
+            >
+            <span class="marquee_divider">✦</span>
+            <span class="marquee_title"
+              >© 2026 JGN.Travel Agency || MERN DEVELOPER By JAGAN</span
+            >
+            <span class="marquee_divider">✦</span>
+            <span class="marquee_title"
+              >© 2026 JGN.Travel Agency || MERN DEVELOPER By JAGAN</span
+            >
+            <span class="marquee_divider">✦</span>
+          </div>
+          <div class="footer_marquee_content" aria-hidden="true">
+            <span class="marquee_title"
+              >© 2026 JGN.Travel Agency || MERN DEVELOPER By JAGAN</span
+            >
+            <span class="marquee_divider">✦</span>
+            <span class="marquee_title"
+              >© 2026 JGN.Travel Agency || MERN DEVELOPER By JAGAN</span
+            >
+            <span class="marquee_divider">✦</span>
+            <span class="marquee_title"
+              >© 2026 JGN.Travel Agency || MERN DEVELOPER By JAGAN</span
+            >
+            <span class="marquee_divider">✦</span>
+            <span class="marquee_title"
+              >© 2026 JGN.Travel Agency || MERN DEVELOPER By JAGAN</span
+            >
+            <span class="marquee_divider">✦</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Mobile Bottom Navigation Bar (Visible on Mobile & Small Devices) -->
+    <nav
+      class="mobile_bottom_nav"
+      id="mobileBottomNav"
+      aria-label="Mobile Navigation Bar"
+    >
+      <a href="#discover" class="bottom_nav_item active" id="bNavHome">
+        <i class="bi bi-house-door-fill"></i>
+        <span>Home</span>
+      </a>
+      <a href="#discover" class="bottom_nav_item" id="bNavDiscover">
+        <i class="bi bi-compass-fill"></i>
+        <span>Discover</span>
+      </a>
+      <a href="#offers" class="bottom_nav_item" id="bNavDeals">
+        <i class="bi bi-tag-fill"></i>
+        <span>Deals</span>
+      </a>
+      <a href="#destinations" class="bottom_nav_item" id="bNavDest">
+        <i class="bi bi-geo-alt-fill"></i>
+        <span>Destinations</span>
+      </a>
+      <a href="#community" class="bottom_nav_item" id="bNavCommunity">
+        <i class="bi bi-people-fill"></i>
+        <span>Community</span>
+      </a>
+      <a href="#about" class="bottom_nav_item" id="bNavAbout">
+        <i class="bi bi-info-circle-fill"></i>
+        <span>About Us</span>
+      </a>
+    </nav>
+
+    <!-- Back to Top Floating Button -->
+    <button class="back_to_top" id="backToTop" aria-label="Back to top">
+      <i class="bi bi-chevron-up"></i>
+    </button>
+
+    <!-- Tour Package Details Modal -->
+    <div class="modal_overlay" id="packageModal">
+      <div class="modal_container">
+        <button
+          class="modal_close_btn"
+          id="packageModalClose"
+          aria-label="Close modal"
+        >
+          &times;
+        </button>
+        <div class="modal_header">
+          <h3 id="modalPkgTitle">Package Details</h3>
+          <span class="modal_badge" id="modalPkgBadge">All Inclusive</span>
+        </div>
+        <div class="modal_body">
+          <div class="modal_img_wrapper">
+            <img src="lotus.jpg" alt="Package Tour" id="modalPkgImg" />
+          </div>
+          <div class="modal_info_content">
+            <div class="modal_meta_row">
+              <span class="modal_price" id="modalPkgPrice">₹5000</span>
+              <span class="modal_days" id="modalPkgDays"
+                ><i class="bi bi-clock-history"></i> 4 Days</span
+              >
+              <span class="modal_loc" id="modalPkgLocation"
+                ><i class="bi bi-geo-alt-fill"></i> India</span
+              >
+            </div>
+            <h4>Inclusions:</h4>
+            <ul class="modal_inclusions">
+              <li>
+                <i class="bi bi-check-circle-fill"></i> Return International
+                Flight Tickets
+              </li>
+              <li>
+                <i class="bi bi-check-circle-fill"></i> 4-Star / 5-Star Luxury
+                Hotel Accommodation
+              </li>
+              <li>
+                <i class="bi bi-check-circle-fill"></i> Daily Gourmet Buffet
+                Breakfast
+              </li>
+              <li>
+                <i class="bi bi-check-circle-fill"></i> Guided Sightseeing &
+                Entry Tickets
+              </li>
+              <li>
+                <i class="bi bi-check-circle-fill"></i> Private Airport Pick-up
+                and Transfers
+              </li>
+            </ul>
+            <p class="modal_desc">
+              Experience the vibrant sights, cultural heritage, and breathtaking
+              views with our dedicated local guide team. Customizable
+              itineraries available on request.
+            </p>
+          </div>
+        </div>
+        <div class="modal_footer">
+          <button class="modal_btn_secondary" id="modalCloseActionBtn">
+            Close
+          </button>
+          <button class="modal_btn_primary" id="modalBookNowBtn">
+            Book This Package
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Booking / Register Modal -->
+    <div class="modal_overlay" id="bookingModal">
+      <div class="modal_container booking_modal_container">
+        <button
+          class="modal_close_btn"
+          id="bookingModalClose"
+          aria-label="Close modal"
+        >
+          &times;
+        </button>
+        <div class="modal_header">
+          <h3>Travel Registration & Booking</h3>
+          <span class="modal_badge">Instant Confirmation</span>
+        </div>
+        <form id="bookingForm" class="booking_form" onsubmit="return false;">
+          <div class="form_grid">
+            <div class="form_group">
+              <label for="bookName"
+                ><i class="bi bi-person-fill"></i> Full Name</label
+              >
+              <input
+                type="text"
+                id="bookName"
+                placeholder="e.g. John Doe"
+                required
+              />
+            </div>
+            <div class="form_group">
+              <label for="bookEmail"
+                ><i class="bi bi-envelope-fill"></i> Email Address</label
+              >
+              <input
+                type="email"
+                id="bookEmail"
+                placeholder="e.g. john@example.com"
+                required
+              />
+            </div>
+            <div class="form_group">
+              <label for="bookPhone"
+                ><i class="bi bi-telephone-fill"></i> Phone Number</label
+              >
+              <input
+                type="tel"
+                id="bookPhone"
+                placeholder="e.g. +1 234 567 8900"
+                required
+              />
+            </div>
+            <div class="form_group">
+              <label for="bookDest"
+                ><i class="bi bi-geo-alt-fill"></i> Selected Destination</label
+              >
+              <select id="bookDest" required>
+                <option value="India - Mumbai Central (₹460)">
+                  India - Mumbai Central (₹460)
+                </option>
+                <option value="USA - New York (₹870)">
+                  USA - New York (₹870)
+                </option>
+                <option value="Russia - St. Petersburg (₹660)">
+                  Russia - St. Petersburg (₹660)
+                </option>
+                <option value="Spain - Barcelona (₹730)">
+                  Spain - Barcelona (₹730)
+                </option>
+                <option value="Delhi - Lotus Temple (₹5000)">
+                  Delhi - Lotus Temple (₹5000)
+                </option>
+                <option value="Dubai - Burj Khalifa (₹4500)">
+                  Dubai - Burj Khalifa (₹4500)
+                </option>
+                <option value="Egypt - Pyramids of Giza (₹4000)">
+                  Egypt - Pyramids of Giza (₹4000)
+                </option>
+                <option value="Vietnam - Marble Mountain (₹5000)">
+                  Vietnam - Marble Mountain (₹5000)
+                </option>
+              </select>
+            </div>
+            <div class="form_group">
+              <label for="bookDate"
+                ><i class="bi bi-calendar-event-fill"></i> Preferred Travel
+                Date</label
+              >
+              <input type="date" id="bookDate" required />
+            </div>
+            <div class="form_group">
+              <label for="bookGuests"
+                ><i class="bi bi-people-fill"></i> Number of Guests</label
+              >
+              <input
+                type="number"
+                id="bookGuests"
+                min="1"
+                max="50"
+                value="2"
+                required
+              />
+            </div>
+          </div>
+          <div class="form_group full_width">
+            <label for="bookNotes"
+              ><i class="bi bi-pencil-square"></i> Special Requests /
+              Note</label
+            >
+            <textarea
+              id="bookNotes"
+              rows="2"
+              placeholder="Any dietary needs, room preferences, or flight time preferences..."
+            ></textarea>
+          </div>
+          <div class="modal_footer form_footer">
+            <button
+              type="button"
+              class="modal_btn_secondary"
+              id="bookingCancelBtn"
+            >
+              Cancel
+            </button>
+            <button
+              type="submit"
+              class="modal_btn_primary"
+              id="bookingSubmitBtn"
+            >
+              <i class="bi bi-check2-circle"></i> Confirm & Book
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Support & Legal Interactive Modal -->
+    <div class="modal_overlay" id="supportModal">
+      <div class="modal_container legal_modal_container">
+        <button
+          class="modal_close_btn"
+          id="supportModalClose"
+          aria-label="Close modal"
+        >
+          &times;
+        </button>
+        <div class="modal_header">
+          <div class="legal_header_title">
+            <i class="bi bi-shield-check modal_header_icon"></i>
+            <div>
+              <h3 id="legalModalTitle">Support & Legal Center</h3>
+              <p class="legal_subtitle">
+                Trusted travel policies, round-the-clock help & transparent
+                terms
+              </p>
+            </div>
+          </div>
+          <span class="modal_badge" id="legalModalBadge">Official Policy</span>
+        </div>
+
+        <!-- Tab Navigation -->
+        <div class="legal_modal_tabs" role="tablist">
+          <button
+            class="legal_tab_btn active"
+            data-target="faq"
+            id="tabBtnFaq"
+            role="tab"
+            aria-selected="true"
+          >
+            <i class="bi bi-question-circle-fill"></i>
+            <span>Help & FAQs</span>
+          </button>
+          <button
+            class="legal_tab_btn"
+            data-target="cancellation"
+            id="tabBtnCancellation"
+            role="tab"
+            aria-selected="false"
+          >
+            <i class="bi bi-arrow-counterclockwise"></i>
+            <span>Cancellation Policy</span>
+          </button>
+          <button
+            class="legal_tab_btn"
+            data-target="privacy"
+            id="tabBtnPrivacy"
+            role="tab"
+            aria-selected="false"
+          >
+            <i class="bi bi-shield-lock-fill"></i>
+            <span>Privacy Policy</span>
+          </button>
+          <button
+            class="legal_tab_btn"
+            data-target="terms"
+            id="tabBtnTerms"
+            role="tab"
+            aria-selected="false"
+          >
+            <i class="bi bi-file-earmark-text-fill"></i>
+            <span>Terms & Conditions</span>
+          </button>
+        </div>
+
+        <!-- Modal Body with Tab Contents -->
+        <div class="modal_body legal_modal_body">
+          <!-- TAB 1: HELP & FAQS -->
+          <div class="legal_tab_pane active" id="pane-faq">
+            <div class="legal_section_intro">
+              <h4>Frequently Asked Questions</h4>
+              <p>
+                Find instant answers to common questions regarding holiday
+                bookings, vouchers, and flights.
+              </p>
+            </div>
+            <div class="legal_faq_list">
+              <div class="legal_faq_item open">
+                <div class="faq_question">
+                  <span
+                    ><i class="bi bi-patch-question"></i> How do I book a tour
+                    package or customized trip?</span
+                  >
+                  <i class="bi bi-chevron-down faq_chevron"></i>
+                </div>
+                <div class="faq_answer">
+                  <p>
+                    You can easily browse our tour packages under
+                    <strong>Tour Package Deals</strong> or select any
+                    destination from <strong>Country Guides</strong>. Click
+                    <em>"Book Package"</em> or use the
+                    <em>"Register Now"</em> button at the top to submit your
+                    details. Our holiday specialist will confirm your itinerary
+                    immediately!
+                  </p>
+                </div>
+              </div>
+
+              <div class="legal_faq_item">
+                <div class="faq_question">
+                  <span
+                    ><i class="bi bi-credit-card-2-front"></i> What payment
+                    methods do you support?</span
+                  >
+                  <i class="bi bi-chevron-down faq_chevron"></i>
+                </div>
+                <div class="faq_answer">
+                  <p>
+                    We accept all major Credit/Debit Cards (Visa, MasterCard,
+                    American Express, RuPay), UPI (Google Pay, PhonePe, Paytm),
+                    Net Banking across 50+ banks, and international wire
+                    transfers with 0% hidden convenience fees.
+                  </p>
+                </div>
+              </div>
+
+              <div class="legal_faq_item">
+                <div class="faq_question">
+                  <span
+                    ><i class="bi bi-receipt"></i> When will I receive my flight
+                    e-tickets and hotel vouchers?</span
+                  >
+                  <i class="bi bi-chevron-down faq_chevron"></i>
+                </div>
+                <div class="faq_answer">
+                  <p>
+                    Immediately after booking confirmation, digital e-tickets
+                    and verified hotel booking vouchers with QR codes are
+                    dispatched directly to your registered email address and
+                    WhatsApp number within 15 minutes.
+                  </p>
+                </div>
+              </div>
+
+              <div class="legal_faq_item">
+                <div class="faq_question">
+                  <span
+                    ><i class="bi bi-sliders"></i> Can I customize an itinerary
+                    or add extra days?</span
+                  >
+                  <i class="bi bi-chevron-down faq_chevron"></i>
+                </div>
+                <div class="faq_answer">
+                  <p>
+                    Yes! All our tour packages are 100% customizable. You can
+                    extend your stay, upgrade hotel categories
+                    (4-Star/5-Star/Resort), or add private guided excursions by
+                    letting our travel desk know via phone or email.
+                  </p>
+                </div>
+              </div>
+
+              <div class="legal_faq_item">
+                <div class="faq_question">
+                  <span
+                    ><i class="bi bi-headset"></i> How do I contact 24/7 on-trip
+                    customer support?</span
+                  >
+                  <i class="bi bi-chevron-down faq_chevron"></i>
+                </div>
+                <div class="faq_answer">
+                  <p>
+                    Our 24/7 concierge and emergency response desk is reachable
+                    round the clock via hotline
+                    <strong>+91-9120852605</strong> or email at
+                    <strong>jagankumar9534@gmail.com</strong>.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- TAB 2: CANCELLATION & REFUND POLICY -->
+          <div class="legal_tab_pane" id="pane-cancellation">
+            <div class="legal_section_intro">
+              <h4>Cancellation & Refund Policy</h4>
+              <p>
+                Enjoy complete peace of mind with our transparent,
+                traveler-first cancellation terms.
+              </p>
+            </div>
+
+            <div class="policy_grid">
+              <div class="policy_card highlight">
+                <div class="policy_card_header">
+                  <i class="bi bi-check-circle-fill text-success"></i>
+                  <div>
+                    <h5>Full Refund (100%)</h5>
+                    <span class="policy_tag"
+                      >Up to 48 Hours Before Departure</span
+                    >
+                  </div>
+                </div>
+                <p>
+                  Cancel your booking at least 48 hours before the trip
+                  departure time to receive a full 100% refund with zero
+                  cancellation penalty fees.
+                </p>
+              </div>
+
+              <div class="policy_card">
+                <div class="policy_card_header">
+                  <i class="bi bi-clock-history text-warning"></i>
+                  <div>
+                    <h5>50% Refund</h5>
+                    <span class="policy_tag"
+                      >24 - 48 Hours Before Departure</span
+                    >
+                  </div>
+                </div>
+                <p>
+                  Cancellations made between 24 and 48 hours prior to scheduled
+                  departure will receive a 50% refund or full 100% travel credit
+                  voucher valid for 12 months.
+                </p>
+              </div>
+
+              <div class="policy_card">
+                <div class="policy_card_header">
+                  <i class="bi bi-lightning-charge-fill text-primary"></i>
+                  <div>
+                    <h5>Instant Refund Processing</h5>
+                    <span class="policy_tag">3 - 5 Business Days</span>
+                  </div>
+                </div>
+                <p>
+                  Approved refunds are credited directly back to the original
+                  mode of payment (UPI / Card / Net Banking) within 3 to 5
+                  banking working days.
+                </p>
+              </div>
+
+              <div class="policy_card">
+                <div class="policy_card_header">
+                  <i class="bi bi-heart-pulse-fill text-danger"></i>
+                  <div>
+                    <h5>Medical & Visa Emergency Waiver</h5>
+                    <span class="policy_tag">Full Credit / Reschedule</span>
+                  </div>
+                </div>
+                <p>
+                  In cases of unexpected medical emergencies or consular visa
+                  refusal, provide valid documentation to receive a 100% tour
+                  date reschedule with no surcharge.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- TAB 3: PRIVACY POLICY -->
+          <div class="legal_tab_pane" id="pane-privacy">
+            <div class="legal_section_intro">
+              <h4>Privacy & Data Protection Policy</h4>
+              <p>
+                We are dedicated to safeguarding your personal data with
+                bank-grade security protocols.
+              </p>
+            </div>
+
+            <div class="privacy_features_list">
+              <div class="privacy_feature_box">
+                <div class="privacy_icon"><i class="bi bi-lock-fill"></i></div>
+                <div class="privacy_info">
+                  <h5>256-Bit SSL Encrypted Connections</h5>
+                  <p>
+                    All data exchanged between your browser and our servers is
+                    secured using TLS 1.3 / 256-bit SSL encryption, ensuring
+                    your identity and payment credentials stay private.
+                  </p>
+                </div>
+              </div>
+
+              <div class="privacy_feature_box">
+                <div class="privacy_icon"><i class="bi bi-shield-x"></i></div>
+                <div class="privacy_info">
+                  <h5>Zero Third-Party Data Sharing</h5>
+                  <p>
+                    We never sell, rent, or monetize your contact information,
+                    passport records, or trip details to third-party advertising
+                    companies or marketing agencies.
+                  </p>
+                </div>
+              </div>
+
+              <div class="privacy_feature_box">
+                <div class="privacy_icon">
+                  <i class="bi bi-credit-card-fill"></i>
+                </div>
+                <div class="privacy_info">
+                  <h5>PCI-DSS Compliant Payment Handling</h5>
+                  <p>
+                    We do not store your credit card CVV or net-banking PINs on
+                    our servers. Transactions are handled strictly via PCI-DSS
+                    Level 1 certified payment gateways.
+                  </p>
+                </div>
+              </div>
+
+              <div class="privacy_feature_box">
+                <div class="privacy_icon"><i class="bi bi-cookie"></i></div>
+                <div class="privacy_info">
+                  <h5>Transparent Cookie & Session Usage</h5>
+                  <p>
+                    We only use essential session cookies to remember your
+                    travel search filters, currency preferences, and theme
+                    toggle settings for an optimal user experience.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- TAB 4: TERMS & CONDITIONS -->
+          <div class="legal_tab_pane" id="pane-terms">
+            <div class="legal_section_intro">
+              <h4>Terms & Conditions of Service</h4>
+              <p>
+                Please review these standard conditions governing all tour
+                packages and flight reservations.
+              </p>
+            </div>
+
+            <div class="terms_content_block">
+              <div class="terms_item">
+                <h5>
+                  <span class="terms_num">1.</span> Passport & Visa Requirements
+                </h5>
+                <p>
+                  Travelers are solely responsible for holding a passport valid
+                  for at least 6 months from the date of return and obtaining
+                  appropriate entry visas, transit permits, and vaccination
+                  certificates for international travel destinations.
+                </p>
+              </div>
+
+              <div class="terms_item">
+                <h5>
+                  <span class="terms_num">2.</span> Flight Schedules & Airline
+                  Operational Changes
+                </h5>
+                <p>
+                  Flight departure timings, terminal gates, and aircraft models
+                  are subject to airline operational modifications and weather
+                  conditions. MR.TRAVEL will notify passengers proactively of
+                  any major timetable changes.
+                </p>
+              </div>
+
+              <div class="terms_item">
+                <h5>
+                  <span class="terms_num">3.</span> Standard Hotel Policies &
+                  Inclusions
+                </h5>
+                <p>
+                  Standard hotel check-in time is 2:00 PM and check-out is 11:00
+                  AM local time. Early check-in or late check-out is subject to
+                  room availability and hotel discretion. Package inclusions are
+                  detailed explicitly on each itinerary page.
+                </p>
+              </div>
+
+              <div class="terms_item">
+                <h5>
+                  <span class="terms_num">4.</span> Comprehensive Travel
+                  Insurance Recommendation
+                </h5>
+                <p>
+                  We strongly recommend all travelers purchase comprehensive
+                  travel insurance covering overseas medical emergencies,
+                  personal baggage loss, and unforeseen trip cancellations or
+                  delays.
+                </p>
+              </div>
+
+              <div class="terms_item">
+                <h5>
+                  <span class="terms_num">5.</span> Baggage Allowance &
+                  Restricted Goods
+                </h5>
+                <p>
+                  Standard luggage allowance per passenger is governed by
+                  individual airline guidelines (typically 20kg–30kg check-in
+                  and 7kg cabin baggage). Travelers must comply with customs
+                  regulations regarding prohibited articles.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Modal Footer -->
+        <div class="modal_footer legal_modal_footer">
+          <div class="support_quick_contact">
+            <span
+              ><i class="bi bi-clock-fill"></i> 24/7 Helpline:
+              <strong>+91-9120852605</strong></span
+            >
+          </div>
+          <div class="legal_footer_btns">
+            <button class="modal_btn_secondary" id="supportModalCloseBtn">
+              Close
+            </button>
+            <a
+              href="mailto:jagankumar9534@gmail.com"
+              class="modal_btn_primary"
+              id="supportContactEmailBtn"
+            >
+              <i class="bi bi-headset"></i> Email Support
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Toast Notification Container -->
+    <div class="toast_container" id="toastContainer"></div>
+
+    <!-- Scripts -->
+    <script src="app.js"></script>
+  </body>
+</html>

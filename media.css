@@ -1,0 +1,640 @@
+/* ==========================================================================
+   MR.TRAVEL - COMPREHENSIVE RESPONSIVE MEDIA QUERIES (ALL DEVICES)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Large Laptops & Desktops (max-width: 1200px)
+   -------------------------------------------------------------------------- */
+@media screen and (max-width: 1200px) {
+    header,
+    .offers,
+    .destination,
+    .community_section,
+    .footer_nav {
+        width: 94%;
+    }
+
+    .travel_bx .cards,
+    .offers .cards {
+        gap: 16px;
+    }
+
+    .package_card .img_text {
+        height: 220px;
+    }
+
+    .destination {
+        gap: 30px;
+        padding: 30px;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   2. Medium Tablets & Small Laptops (max-width: 992px)
+   -------------------------------------------------------------------------- */
+@media screen and (max-width: 992px) {
+    header .content::before {
+        height: 480px;
+    }
+
+    .travel_bx .cards {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+
+    .offers .cards {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .search_bx {
+        width: 96%;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        padding: 14px;
+    }
+
+    .search_card {
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+        padding: 8px 10px;
+    }
+
+    .search_card:nth-child(2) {
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .btn_explore {
+        grid-column: span 2;
+        width: 100%;
+        margin-top: 6px;
+    }
+
+    .destination {
+        flex-direction: column-reverse;
+        padding: 30px 24px;
+    }
+
+    .destination .des_bx,
+    .destination .img_bx {
+        width: 100%;
+    }
+
+    .destination .img_bx {
+        margin-bottom: 10px;
+    }
+
+    .destination .img_bx img#destMainImg {
+        max-height: 380px;
+    }
+
+    .footer_nav {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+    }
+
+    .stats_list {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   3. Tablets & Large Mobile Devices (max-width: 768px)
+   -------------------------------------------------------------------------- */
+@media screen and (max-width: 768px) {
+    header {
+        width: 95%;
+        margin-top: 10px;
+    }
+
+    header nav {
+        height: 65px;
+        position: relative;
+    }
+
+    /* Mobile Navigation Architecture */
+    .menu-toggle-btn {
+        display: none !important;
+    }
+
+    header nav ul#menu_bx {
+        display: none !important;
+    }
+
+    /* Top Navbar Actions */
+    .nav_actions {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .nav-btn-register {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 8px 16px;
+        font-size: 12px;
+        font-weight: 600;
+        border-radius: var(--radius-full);
+        white-space: nowrap;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    .theme_toggle_btn {
+        width: 38px;
+        height: 38px;
+        font-size: 16px;
+    }
+
+    /* Show Mobile Bottom Navigation */
+    .mobile_bottom_nav {
+        display: flex;
+    }
+
+    body {
+        padding-bottom: 72px;
+    }
+
+    .back_to_top {
+        bottom: 80px;
+    }
+
+    /* Hero Section Adjustments */
+    header .content {
+        padding-bottom: 10px;
+    }
+
+    header .content::before,
+    .hero_bg_slider {
+        height: 440px;
+    }
+
+    header .content .cont_bx {
+        padding: 35px 20px 20px;
+    }
+
+    header .content .cont_bx h1 {
+        font-size: 28px;
+        line-height: 1.25;
+    }
+
+    header .content .cont_bx p {
+        font-size: 13px;
+        margin-bottom: 20px;
+    }
+
+    .btn_search,
+    .btn_explore_outline {
+        padding: 11px 22px;
+        font-size: 13px;
+    }
+
+    /* Search Box */
+    header .trip_bx {
+        margin-top: 25px;
+    }
+
+    .search_bx {
+        width: 100%;
+        grid-template-columns: 1fr;
+        padding: 12px;
+    }
+
+    .search_card {
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+        padding: 10px 8px;
+    }
+
+    .btn_explore {
+        grid-column: span 1;
+        padding: 12px;
+    }
+
+    /* Country Cards Mobile Horizontal Scroll */
+    .travel_bx {
+        padding: 16px;
+    }
+
+    .swipe_hint {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+    }
+
+    .travel_bx .cards {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 10px;
+        gap: 14px;
+    }
+
+    .travel_bx .cards::-webkit-scrollbar {
+        height: 5px;
+    }
+
+    .travel_bx .cards::-webkit-scrollbar-track {
+        background: #e2e8f0;
+        border-radius: 10px;
+    }
+
+    .travel_bx .cards::-webkit-scrollbar-thumb {
+        background: var(--dark);
+        border-radius: 10px;
+    }
+
+    .country_card {
+        min-width: 220px;
+        max-width: 240px;
+        scroll-snap-align: start;
+        flex-shrink: 0;
+    }
+
+    /* Offers Section */
+    .offers {
+        margin-top: 50px;
+    }
+
+    .offers .cards {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+
+    /* Destination Showcase */
+    .destination {
+        margin-top: 60px;
+        padding: 24px 16px;
+    }
+
+    .floating_card {
+        padding: 6px 10px;
+        gap: 8px;
+    }
+
+    #floatCard1 {
+        bottom: 12px;
+        left: 4px;
+    }
+
+    #floatCard2 {
+        top: 12px;
+        right: 4px;
+    }
+
+    .floating_flag_img {
+        width: 34px;
+        height: 24px;
+    }
+
+    .floating_landmark_img {
+        width: 32px;
+        height: 32px;
+    }
+
+    .floating_card .cont h4 {
+        font-size: 11px;
+    }
+
+    .active_flag_card {
+        padding: 10px 14px;
+        gap: 12px;
+    }
+
+    .active_flag_img {
+        width: 56px;
+        height: 38px;
+    }
+
+    /* Community Section */
+    .community_section {
+        margin-top: 60px;
+        padding: 40px 20px;
+    }
+
+    /* Modals Responsive */
+    .modal_container {
+        max-height: 94vh;
+    }
+
+    .form_grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .form_group.full_width {
+        grid-column: span 1;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   4. Mobile Phones (max-width: 576px)
+   -------------------------------------------------------------------------- */
+@media screen and (max-width: 576px) {
+    header nav .logo {
+        font-size: 20px;
+    }
+
+    header nav .logo h4 {
+        font-size: 17px;
+        min-width: 110px;
+    }
+
+    header nav .logo i {
+        font-size: 20px;
+    }
+
+    .nav_actions {
+        gap: 6px;
+    }
+
+    .nav-btn-register {
+        padding: 7px 12px;
+        font-size: 11px;
+    }
+
+    .theme_toggle_btn {
+        width: 35px;
+        height: 35px;
+        font-size: 14px;
+    }
+
+    .bottom_nav_item {
+        padding: 3px 2px;
+    }
+
+    .bottom_nav_item span {
+        font-size: 9px;
+    }
+
+    .bottom_nav_item i {
+        font-size: 16px;
+    }
+
+    header .content::before,
+    .hero_bg_slider {
+        height: 380px;
+        border-radius: var(--radius-md);
+    }
+
+    header .content .cont_bx {
+        padding: 25px 12px 15px;
+    }
+
+    header .content .cont_bx h1 {
+        font-size: 23px;
+        margin-bottom: 12px;
+    }
+
+    .hero_badge {
+        font-size: 10px;
+        padding: 4px 12px;
+    }
+
+    .hero_btns {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+
+    .btn_search,
+    .btn_explore_outline {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+    }
+
+    /* Offers 1-column layout for perfect mobile viewing */
+    .offers .cards {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .package_card {
+        max-width: 360px;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    .package_card .img_text {
+        height: 230px;
+    }
+
+    .offer_filters {
+        gap: 6px;
+    }
+
+    .filter_btn {
+        padding: 6px 14px;
+        font-size: 11px;
+    }
+
+    /* Destination List on Mobile */
+    .dest_list {
+        gap: 6px;
+    }
+
+    .dest_item {
+        padding: 6px 14px;
+        font-size: 12px;
+    }
+
+    .destination .des_bx h6 {
+        font-size: 11px;
+    }
+
+    .destination .img_bx img#destMainImg {
+        max-height: 280px;
+    }
+
+    /* Footer Mobile */
+    footer {
+        margin-top: 50px;
+    }
+
+    .footer_top {
+        padding: 40px 15px 30px;
+    }
+
+    footer .input {
+        flex-direction: column;
+        border-radius: var(--radius-md);
+        padding: 8px;
+        gap: 8px;
+    }
+
+    footer .input input {
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+    }
+
+    footer .input button {
+        width: 100%;
+        border-radius: var(--radius-sm);
+        padding: 10px;
+    }
+
+    .stats_list {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        width: 95%;
+    }
+
+    .stat_num {
+        font-size: 20px;
+    }
+
+    .stat_card h6 {
+        font-size: 10px;
+    }
+
+    .footer_nav {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding: 35px 0;
+    }
+
+    .footer_bottom {
+        padding: 12px 0;
+    }
+
+    .marquee_title {
+        font-size: 16px;
+    }
+
+    .marquee_divider {
+        margin: 0 14px;
+    }
+
+    .toast_container {
+        top: 18px;
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+        width: 92%;
+        max-width: 420px;
+    }
+
+    .toast {
+        width: auto;
+        font-size: 12.5px;
+        padding: 11px 18px;
+    }
+
+    .legal_modal_container {
+        height: 92vh;
+        max-height: none;
+    }
+
+    .legal_modal_tabs {
+        padding: 4px 8px 0;
+        gap: 4px;
+    }
+
+    .legal_tab_btn {
+        padding: 8px 12px;
+        font-size: 11px;
+        gap: 5px;
+    }
+
+    .legal_tab_btn i {
+        font-size: 12px;
+    }
+
+    .policy_grid {
+        grid-template-columns: 1fr;
+    }
+
+    .legal_modal_footer {
+        flex-direction: column;
+        gap: 12px;
+        align-items: stretch;
+        text-align: center;
+    }
+
+    .support_quick_contact {
+        justify-content: center;
+    }
+
+    .legal_footer_btns {
+        justify-content: center;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   5. Ultra Small Mobile Devices (max-width: 380px)
+   -------------------------------------------------------------------------- */
+@media screen and (max-width: 380px) {
+    header,
+    .offers,
+    .destination,
+    .community_section {
+        width: 96%;
+    }
+
+    header nav {
+        padding: 0 4px;
+    }
+
+    header nav .logo h4 {
+        font-size: 14px;
+        min-width: 90px;
+    }
+
+    .nav-btn-register {
+        padding: 6px 9px;
+        font-size: 10px;
+    }
+
+    .theme_toggle_btn {
+        width: 32px;
+        height: 32px;
+        font-size: 13px;
+    }
+
+    .bottom_nav_item span {
+        font-size: 8px;
+    }
+
+    .bottom_nav_item i {
+        font-size: 15px;
+    }
+
+    header .content .cont_bx h1 {
+        font-size: 20px;
+    }
+
+    .country_card {
+        min-width: 195px;
+    }
+
+    .package_card .cont_bx {
+        padding: 10px;
+    }
+
+    .info_price h4 {
+        font-size: 13px;
+    }
+
+    .floating_card {
+        position: static;
+        margin: 6px auto;
+        width: fit-content;
+    }
+
+    .destination .img_bx {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .marquee_title {
+        font-size: 13.5px;
+    }
+
+    .marquee_divider {
+        margin: 0 10px;
+    }
+}
